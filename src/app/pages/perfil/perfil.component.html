@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title class="subtitulo ion-text-wrap">
         Perfil
     </ion-title>
@@ -76,7 +76,7 @@
 
   <div *ngIf="uid.length" >
 
-    <h3 class="subtitulo encabezado">Tus datos 1</h3>
+    <h3 class="subtitulo encabezado">Tus datos </h3>
     <ion-item>
       <ion-label  class="normal">
           Email: {{cliente.email}}
@@ -95,7 +95,7 @@
       </ion-input>
     </ion-item>
 
-    <!-- <ion-item (click)="addDirection()">
+    <ion-item (click)="addDirection()">
       <ion-label class="normal">
          Ubicación
       </ion-label>
@@ -104,7 +104,7 @@
              <ion-icon slot="icon-only" color="danger" name="location"></ion-icon>
         </ion-button>
       </ion-buttons>
-    </ion-item> -->
+    </ion-item>
 
 
     <ion-item>
@@ -134,10 +134,10 @@
 
 
     <div style="text-align: end; margin: 10px;">
-      <ion-button  (click)="guardaraUser()"  class="normal" color="dark">guardar</ion-button>
-    </div>
-    <div style="text-align: end; margin: 10px;">
-      <ion-button  (click)="salir()"  class="normal" color="dark">salir</ion-button>
+      <ion-button  (click)="guardarUser()"  class="normal" color="medium">Guardar</ion-button>
+
+
+      <ion-button  (click)="salir()"  class="normal" color="medium">Salir</ion-button>
     </div>
 
   </div>

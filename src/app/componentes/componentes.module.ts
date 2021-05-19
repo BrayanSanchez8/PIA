@@ -4,22 +4,27 @@ import { ProductoComponent } from './producto/producto.component';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { ItemcarritoComponent } from './itemcarrito/itemcarrito.component';
+import { ComentariosComponent } from './comentarios/comentarios.component';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     ProductoComponent,
-    ItemcarritoComponent
+    ItemcarritoComponent,
+    ComentariosComponent
   ],
   imports: [
     CommonModule,
     IonicModule,
-    RouterModule
+    RouterModule,
+    FormsModule
+
   ],
   exports:[
     ProductoComponent,
-    ItemcarritoComponent
+    ItemcarritoComponent,
   ]
 })
 export class ComponentesModule { }

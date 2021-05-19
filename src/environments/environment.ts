@@ -4,6 +4,7 @@
 
 export const environment = {
   production: true,
+  ApiKeyGoogleMaps: 'AIzaSyBhQuXDk4lXqVLKDyOk0nxCid3qzIovqTA',
   firebaseConfig :{
     apiKey: "AIzaSyBWZn4R0xrm708Yb5piUO9FbWi2oiYpvbA",
     authDomain: "wings-pia.firebaseapp.com",

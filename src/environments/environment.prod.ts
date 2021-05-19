@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+  ApiKeyGoogleMaps: 'AIzaSyBhQuXDk4lXqVLKDyOk0nxCid3qzIovqTA',// For Firebase JS SDK v7.20.0 and later, measurementId is optional
  firebaseConfig :{
   apiKey: "AIzaSyBWZn4R0xrm708Yb5piUO9FbWi2oiYpvbA",
   authDomain: "wings-pia.firebaseapp.com",

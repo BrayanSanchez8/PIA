@@ -5,6 +5,7 @@ import { FirebaseauthService } from '../../services/firebaseauth.service';
 import { FirestoreService } from '../../services/firestore.service';
 import { FirestorageService } from '../../services/firestorage.service';
 import { Subscription } from 'rxjs';
+import { GooglemapsComponent } from 'src/app/googlemaps/googlemaps/googlemaps.component';
 //import { GooglemapsComponent } from '../../googlemaps/googlemaps.component';
 
 @Component({
@@ -136,5 +137,40 @@ export class PerfilComponent implements OnInit {
            console.log('ingreso con exito');
       });
    }
+
+
+   async addDirection() {
+
+    const ubicacion = this.cliente.ubicacion;
+    let positionInput = {
+      lat: 0,
+      lng: 0,
+    };
+    if (ubicacion !== null) {
+        positionInput = ubicacion;
+    }
+
+    const modalAdd  = await this.modalController.create({
+      component: GooglemapsComponent,
+      mode: 'ios',
+      swipeToClose: true,
+      componentProps: {position: positionInput}
+    });
+    await modalAdd.present();
+
+    const {data} = await modalAdd.onWillDismiss();
+    if (data) {
+      console.log('data -> ', data);
+      this.cliente.ubicacion = data.pos;
+      console.log('this.cliente -> ', this.cliente);
+    }
+
+  }
+
+
+
+
+
+
 
 }

@@ -7,6 +7,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { FormsModule } from '@angular/forms';
 import { ComponentesModule } from '../componentes/componentes.module';
 import { CarritoComponent } from './carrito/carrito.component';
+import { MispedidosComponent } from './mispedidos/mispedidos.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 
 
@@ -15,7 +17,9 @@ import { CarritoComponent } from './carrito/carrito.component';
 
     HomeComponent,
     PerfilComponent,
-    CarritoComponent
+    CarritoComponent,
+    MispedidosComponent,
+    PedidosComponent
 
   ],
   imports: [
