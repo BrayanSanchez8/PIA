@@ -48,7 +48,7 @@
       </ion-input>
     </ion-item>
 
-    <ion-item (click)="addDirection()">
+    <ion-item *ngIf="!ingresarEnable" (click)="addDirection()">
       <ion-label class="normal">
          Ubicación
       </ion-label>

@@ -31,5 +31,7 @@ export interface ProductoPedido {
   cantidad: number;
 }
 
+
+
 export type  EstadoPedido = 'enviado' | 'visto' | 'camino' | 'entregado';
 

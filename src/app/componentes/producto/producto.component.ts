@@ -4,6 +4,7 @@ import { Producto } from '../../models';
 import { CarritoService } from '../../services/carrito.service';
 import { ComentariosComponent } from '../comentarios/comentarios.component';
 //import { ComentariosComponent } from '../comentarios/comentarios.component';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-producto',
@@ -15,15 +16,21 @@ export class ProductoComponent implements OnInit {
   @Input() producto: Producto;
 
   constructor(public carritoService: CarritoService,
-              public modalController: ModalController) {
+              public modalController: ModalController,
+              public toastController: ToastController ) {
 
   }
 
   ngOnInit() {
   }
 
-  addCarrito() {
+  async addCarrito() {
         console.log('addCarrito()');
+        const toast = await this.toastController.create({
+          message: 'Agregado al carrito',
+          duration: 2000
+        });
+        toast.present();
         this.carritoService.addProducto(this.producto);
   }
 

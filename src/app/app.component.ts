@@ -49,7 +49,7 @@ export class AppComponent {
   getUid() {
       this.firebaseauthService.stateAuth().subscribe( res => {
             if (res !== null) {
-                if (res.uid === 'qs3n52OtSGOiJXKqTySAOFX5kY22')  {
+                if (res.uid === 'aGbcYC0X9xfi9i6bEMNMJitwTK03')  {
                     this.admin = true;
                 } else {
                    this.admin = false;
