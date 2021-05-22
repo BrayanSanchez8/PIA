@@ -4,6 +4,8 @@ import { Observable, Subject, Subscription } from 'rxjs';
 import { Producto, Pedido, Cliente, ProductoPedido } from '../models';
 import { FirebaseauthService } from './firebaseauth.service';
 import { FirestoreService } from './firestore.service';
+import { AlertController, ToastController } from '@ionic/angular';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +23,9 @@ export class CarritoService {
 
   constructor(public firebaseauthService: FirebaseauthService,
               public firestoreService: FirestoreService,
-              public router: Router) {
+              public router: Router,
+              public alertController: AlertController,
+              public toastController: ToastController,) {
 
     //   console.log('CarritoService inicio');
       this.initCarrito();
@@ -81,9 +85,15 @@ export class CarritoService {
     return this.pedido$.asObservable();
   }
 
-  addProducto(producto: Producto) {
+ async addProducto(producto: Producto) {
      console.log('addProducto ->', this.uid);
      if (this.uid.length) {
+      const toast = await this.toastController.create({
+        message: 'Agregado al carrito',
+        duration: 2000
+      });
+
+      toast.present();
         const item = this.pedido.productos.find( productoPedido => {
             return (productoPedido.producto.id === producto.id)
         });
@@ -97,6 +107,17 @@ export class CarritoService {
            this.pedido.productos.push(add);
         }
      } else {
+
+          const alert = await this.alertController.create({
+            cssClass: 'normal',
+            header: 'Alert',
+            subHeader: 'Subtitle',
+            message: 'Debes iniciar sesion',
+            buttons: ['OK']
+          });
+          await alert.present();
+
+          const { role } = await alert.onDidDismiss();
           this.router.navigate(['/perfil']);
           return;
      }

@@ -33,11 +33,11 @@ export class AppComponent {
 
       this.platform.ready().then(() => {
 
-        SplashScreen.hide();
-        StatusBar.setBackgroundColor({color: '#ffffff'});
-        StatusBar.setStyle({
-          style: StatusBarStyle.Light
-        });
+        // SplashScreen.hide();
+        // StatusBar.setBackgroundColor({color: '#ffffff'});
+        // StatusBar.setStyle({
+        //   style: StatusBarStyle.Light
+        // });
 
         // this.statusBar.styleDefault();
         // this.splashScreen.hide();

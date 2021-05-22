@@ -26,11 +26,7 @@ export class ProductoComponent implements OnInit {
 
   async addCarrito() {
         console.log('addCarrito()');
-        const toast = await this.toastController.create({
-          message: 'Agregado al carrito',
-          duration: 2000
-        });
-        toast.present();
+
         this.carritoService.addProducto(this.producto);
   }
 
